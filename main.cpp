@@ -3,6 +3,7 @@
 #include <sstream>
 
 using namespace std;
+
 void joueur_1 () {
     string qua[3][3] = {
             {"", "", ""},
@@ -297,7 +298,140 @@ void joueur_2 () {
 
 }
 
+
+void player2 () {
+    string qua[3][3] = {
+            {"", "", ""},
+            {"", "", ""},
+            {"", "", ""}
+    };
+
+    bool end = false;
+    //Fonctionnement
+    cout << "   1   |   2   |   3   "<< endl;
+    cout << "-----------------------" << endl;
+    cout << "   4   |   5   |   6   " << endl;
+    cout << "-----------------------" << endl;
+    cout << "   7   |   8   |   9   "<< endl;
+
+    //Initialisation nmbre de tour
+    int tour = 0;
+
+    //Changement de tour du joueur
+    bool joueur1 = true;
+
+    //1 Tour de jeu
+    while (!end && tour <= 8) {
+        //Tour
+        tour ++;
+        cout << "Tour " << tour << endl;
+
+        //Affichage plateau de jeu
+        cout << "   " + qua[0][0] + "   |   " + qua[0][1] + "   |   " + qua[0][2] + ""<< endl;
+        cout << "--------------------" << endl;
+        cout << "   " + qua[1][0] + "   |   " + qua[1][1] + "   |   " + qua[1][2] + "" << endl;
+        cout << "--------------------" << endl;
+        cout << "   " + qua[2][0] + "   |   " + qua[2][1] + "   |   " + qua[2][2] + ""<< endl;
+        cout << endl;
+        string coup;
+
+        //Tour du joueur
+        string symbole;
+
+        if (joueur1)   {
+            cout << "Au tour du joueur 1 :   " << endl;
+            symbole = "o";
+        }
+        else    {
+            cout << "Au tour du joueur 2 : " << endl;
+            symbole = "x";
+        }
+        cin >> coup;
+        int choix = stoi(coup);
+
+        while (choix < 1 || choix > 9)  {
+            cout << "Veuillez entrer un chiffre entre 1 et 9" << endl;
+            cin >> coup;
+            choix = stoi(coup);
+        }
+
+        //Application de la vérification
+
+
+        switch(choix) {
+            case 1:
+                qua[0][0] = symbole;
+                break;
+            case 2:
+                qua[0][1] = symbole;
+                break;
+            case 3:
+                qua[0][2] = symbole;
+                break;
+            case 4:
+                qua[1][0] = symbole;
+                break;
+            case 5:
+                qua[1][1] = symbole;
+                break;
+            case 6:
+                qua[1][2] = symbole;
+                break;
+            case 7:
+                qua[2][0] = symbole;
+                break;
+            case 8:
+                qua[2][1] = symbole;
+                break;
+            case 9:
+                qua[2][2] = symbole;
+                break;
+        }
+
+        //ligne
+        for(int i = 0; i < 3; i++) {
+            if (qua[i][0] == qua[i][1] && qua[i][0] == qua[i][2] && qua[i][0] != "") {
+                end = true;
+            }
+        }
+
+        //colonne
+        for(int i = 0; i < 3; i++) {
+            if (qua[0][i] == qua[1][i] && qua[0][i] == qua[2][i] && qua[0][i] != "") {
+                end = true;
+            }
+        }
+
+        //diag
+        int i = 0;
+        if (qua[0][0] == qua[1][1] && qua[0][0] == qua[2][2] && qua[0][0] != "") {
+            end = true;
+        }
+        if (qua[0][2] == qua[1][1] && qua[0][2] == qua[2][0] && qua[0][2] != "") {
+            end = true;
+        }
+
+        //Changement de joueur
+        joueur1 = !joueur1;
+
+    }
+
+    //Affichage final plateau de jeu
+    cout << "   " + qua[0][0] + "   |   " + qua[0][1] + "   |   " + qua[0][2] + ""<< endl;
+    cout << "--------------------" << endl;
+    cout << "   " + qua[1][0] + "   |   " + qua[1][1] + "   |   " + qua[1][2] + "" << endl;
+    cout << "--------------------" << endl;
+    cout << "   " + qua[2][0] + "   |   " + qua[2][1] + "   |   " + qua[2][2] + ""<< endl;
+
+    if (!joueur1)    {
+        cout << "Le joueur 1 gagne" << endl;
+    }
+    else    {
+        cout << "Le joueur 2 gagne" << endl;
+    }
+}
+
 int main() {
-    joueur_2();
+    player2();
     return 0;
 }
