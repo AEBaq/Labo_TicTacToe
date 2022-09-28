@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//Version pour un joueur
 void joueur_1 () {
     string qua[3][3] = {
             {"", "", ""},
@@ -106,6 +107,7 @@ void joueur_1 () {
     cout << "Le Joueur 1 a gagné" << endl;
 }
 
+//Version pour 2 joueurs : code !propre et !simplifié
 void joueur_2 () {
     string qua[3][3] = {
             {"", "", ""},
@@ -298,7 +300,7 @@ void joueur_2 () {
 
 }
 
-
+//Version pour 2 joueurs : changement de joueur effectué via un bool
 void player2 () {
     string qua[3][3] = {
             {"", "", ""},
