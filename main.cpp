@@ -38,7 +38,7 @@ void player2 () {
 
     bool end = false;
     //Fonctionnement
-    cout << "Pour choisir une case, il suffit de rentrer le chiffre de la case correspondant lors de votre tour." << endl;
+    cout << "Pour choisir une case, il suffit de rentrer le chiffre de la case correspondante lors de votre tour." << endl;
     cout << "" << endl;
     cout << "   1   |   2   |   3   "<< endl;
     cout << "-----------------------" << endl;
@@ -88,7 +88,7 @@ void player2 () {
 
         while(vide == false)
         {
-            cout << "Veuillez entrer un chiffre entre 1 et 9 correspondant à une case vide " << endl;
+            cout << "Veuillez entrer un chiffre entre 1 et 9 correspondant a une case vide " << endl;
             cin >> coup;
             choix = stoi(coup);
             check(choix, libre, vide);
