@@ -88,7 +88,7 @@ void player2 () {
 
         while(vide == false)
         {
-            cout << "Veuillez entrer un chiffre entre 1 et 9 correspondant a une case vide " << endl;
+            cout << "Veuillez entrer un chiffre entre 1 et 9 correspondant a une case vide" << endl;
             cin >> coup;
             choix = stoi(coup);
             check(choix, libre, vide);
