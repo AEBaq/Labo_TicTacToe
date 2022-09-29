@@ -361,9 +361,6 @@ void player2 () {
             choix = stoi(coup);
         }
 
-        //Application de la vérification
-
-
         switch(choix) {
             case 1:
                 qua[0][0] = symbole;
