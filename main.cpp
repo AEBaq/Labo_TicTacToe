@@ -1,6 +1,6 @@
 /*
  * Baquerizo Lema Anny Emily
- * Rendu le Octobre 2022
+ * Rendu le 29 septembre 2022
  * Laboratoire Tic Tac Toe
  *
  */
