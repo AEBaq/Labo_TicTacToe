@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//Version pour un joueur
+//Version pour un joueur V1
 void joueur_1 () {
     string qua[3][3] = {
             {"", "", ""},
@@ -107,7 +107,7 @@ void joueur_1 () {
     cout << "Le Joueur 1 a gagné" << endl;
 }
 
-//Version pour 2 joueurs : code !propre et !simplifié
+//Version pour 2 joueurs V2.1: code !propre et !simplifié
 void joueur_2 () {
     string qua[3][3] = {
             {"", "", ""},
@@ -300,7 +300,7 @@ void joueur_2 () {
 
 }
 
-//Version pour 2 joueurs : changement de joueur effectué via un bool
+//Version pour 2 joueurs V2.2: changement de joueur effectué via un bool
 void player2 () {
     string qua[3][3] = {
             {"", "", ""},
@@ -310,6 +310,8 @@ void player2 () {
 
     bool end = false;
     //Fonctionnement
+    cout << "Pour choisir une case, il suffit de rentrer le chiffre de la case correspondant lors de votre tour." << endl;
+    cout << "" << endl;
     cout << "   1   |   2   |   3   "<< endl;
     cout << "-----------------------" << endl;
     cout << "   4   |   5   |   6   " << endl;
@@ -326,15 +328,17 @@ void player2 () {
     while (!end && tour <= 8) {
         //Tour
         tour ++;
+        cout << "" << endl;
         cout << "Tour " << tour << endl;
 
         //Affichage plateau de jeu
+        cout << "" << endl;
         cout << "   " + qua[0][0] + "   |   " + qua[0][1] + "   |   " + qua[0][2] + ""<< endl;
         cout << "--------------------" << endl;
         cout << "   " + qua[1][0] + "   |   " + qua[1][1] + "   |   " + qua[1][2] + "" << endl;
         cout << "--------------------" << endl;
         cout << "   " + qua[2][0] + "   |   " + qua[2][1] + "   |   " + qua[2][2] + ""<< endl;
-        cout << endl;
+        cout << "" << endl;
         string coup;
 
         //Tour du joueur
@@ -424,6 +428,7 @@ void player2 () {
     cout << "   " + qua[1][0] + "   |   " + qua[1][1] + "   |   " + qua[1][2] + "" << endl;
     cout << "--------------------" << endl;
     cout << "   " + qua[2][0] + "   |   " + qua[2][1] + "   |   " + qua[2][2] + ""<< endl;
+    cout << "" << endl;
 
     if (!joueur1)    {
         cout << "Le joueur 1 gagne" << endl;
@@ -432,6 +437,7 @@ void player2 () {
         cout << "Le joueur 2 gagne" << endl;
     }
 }
+
 
 int main() {
     player2();
